@@ -8,10 +8,10 @@ CREATE TABLE discs (
   category VARCHAR(255),
   brand VARCHAR(255),
   disc_name VARCHAR(255),
-  speed INT,
-  glide INT,
-  turn INT,
-  fade INT,
+  speed NUMERIC(4,1),
+  glide NUMERIC(4,1),
+  turn NUMERIC(4,1),
+  fade NUMERIC(4,1),
   date VARCHAR(300)
 );
 
