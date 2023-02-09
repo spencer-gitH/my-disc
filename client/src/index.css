@@ -1,0 +1,415 @@
+/* Reset */
+:root {
+  --color-medium-white: hsl(46, 100%, 97%);
+  --color-medium-white-dark: hsl(46, 100%, 92%);
+  --color-dark-white: 	hsl(38, 16%, 76%);
+  --color-dark-white-dark: 	hsl(38, 16%, 71%);
+  --color-medium-grey: hsl(34, 6%, 24%);
+  --color-medium-grey-dark: hsl(34, 6%, 19%);
+  --color-dark-grey: hsl(40, 4%, 14%);
+  --color-dark-grey-dark: hsl(40, 4%, 9%);
+  --color-medium-orange: hsl(17, 83%, 54%);
+  --color-medium-orange-dark: hsl(17, 83%, 49%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-dark-white);
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  margin: 0 30px;
+  width: 100%;
+}
+
+.app {
+  background-color: #FFFCF2;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  min-width: 800px;
+  margin-top: 50px;
+}
+
+.button-container, .info-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-container button {
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Buttons */
+.success {background-color: #04AA6D;}
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #2196F3;}
+.info:hover {background: #0b7dda;}
+
+.warning {background-color: #ff9800;}
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #f44336;} 
+.danger:hover {background: #da190b;}
+
+.default {background-color: #e7e7e7; color: black;}
+.default:hover {background: #ddd;}
+
+input {
+  margin: 11px 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+/* List Header */
+.list-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+/* Disc Grid */
+.disc-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-dark-grey);
+  background-color: var(--color-medium-white);
+}
+
+.card:hover {
+  background-color: var(--color-dark-white-dark);
+}
+
+.card.info:hover {
+  background-color: var(--color-medium-white);
+}
+
+.card-img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.disc-description   {
+  color: var(--color-medium-grey);
+}
+
+.disc-description span {
+  margin: 2px;
+  font-size: 15px;
+}
+
+.disc-name {
+  color: var(--color-medium-orange);
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.disc-name>span {
+  margin: 0 3px;
+}
+
+.disc-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.disc-numbers>div {
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.attribute {
+  font-size: 15px;
+
+  color: var(--color-medium-grey);
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 18px;
+}
+
+/* Modal */
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 80%;
+  min-width: 500px;
+  height: 70vh;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.modal .form-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .form-title-container button {
+  border: none;
+  background-color: transparent;
+}
+
+.modal .form-title-container button:hover {
+  color: red;
+}
+
+.modal-buttons {
+  justify-content: end;
+  margin: 10px 0;
+}
+
+.modal-buttons button {
+  font-size: 15px;
+}
+
+.modal .search {
+  display: flex;
+  flex-direction: column;
+}
+
+.search input {
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
+
+.search ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding: 12px 16px;
+  border: 1px solid var(--color-medium-grey);
+}
+
+li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+li:hover {
+  background-color: var(--color-medium-orange);
+  cursor: pointer;
+}
+
+.search ul li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+li span {
+  margin-right: 10px;
+}
+
+li span:last-child {
+  font-weight: 800;
+}
+
+.image-submit {
+  background-color: var(--color-medium-white);
+  border: 1px solid var(--color-dark-grey);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-submit input[type="file"] {
+  display: none;
+}
+
+.image-submit label {
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #2196F3;
+  margin: 10px;
+}
+
+.image-submit label:hover {
+  background: #0b7dda;
+}
+
+.image-submit button {
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #2196F3;
+  margin: 10px;
+  background-color: #04AA6D;
+}
+
+.image-submit button:hover {background-color: #46a049;}
+
+/* Auth */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.auth-container-box {
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+ }
+
+.auth-container-box form {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  padding: 20px
+}
+
+.auth-options {
+  display: flex;
+}
+
+.auth-options button {
+  width: 50%;
+  border: none;
+  padding: 10px;
+}
+
+.auth-options button.selected {
+  background-color: var(--color-medium-orange);
+}
+
+.auth-options button.selected:hover {
+  background-color: var(--color-medium-orange-dark);
+}
+
+.auth-options button.deselected {
+  background-color: var(--color-dark-white);
+}
+
+.auth-options button.deselected:hover {
+  background-color: var(--color-dark-white-dark);
+}
+
